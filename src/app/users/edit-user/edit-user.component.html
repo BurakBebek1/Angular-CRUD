@@ -1,0 +1,28 @@
+<mat-card>
+  <mat-card-title>Kullanıcı Güncelleme</mat-card-title>
+  <mat-card-content>
+    <div *ngIf="dataLoaded">
+      <form [formGroup]="editUserForm" (submit)="updateUser()">
+        <p>
+          <mat-form-field class="field" appearance="outline">
+            <mat-label>İsim</mat-label>
+            <input matInput placeholder="isim" formControlName="username" />
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field class="field" appearance="outline">
+            <mat-label>Email Adresi</mat-label>
+            <input matInput placeholder="email" formControlName="email" />
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          </mat-form-field>
+        </p>
+
+        <button class="button" mat-raised-button color="primary">
+          Kullanıcıyı Güncelle
+        </button>
+      </form>
+    </div>
+  </mat-card-content></mat-card
+>

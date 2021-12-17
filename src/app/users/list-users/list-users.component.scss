@@ -1,0 +1,39 @@
+.main-content {
+  margin-left: 60px;
+}
+
+.username {
+  min-width: 300px;
+}
+
+.view {
+  margin: 0 10px;
+
+  &:hover {
+    color: grey;
+  }
+}
+
+.edit {
+  margin-right: 10px;
+  margin-left: 10px;
+  text-decoration: none;
+
+  &:hover {
+    color: green;
+  }
+}
+
+.delete {
+  margin-left: 10px;
+  text-decoration: none;
+
+  &:hover {
+    color: red;
+    transition: color 0.2s;
+  }
+}
+
+table {
+  width: 100%;
+}

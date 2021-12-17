@@ -1,0 +1,16 @@
+<h1 *ngIf="listUsers">{{ listUsers.length }} Kullanıcı Gösteriliyor</h1>
+
+<div class="main-content">
+  <mat-list role="list" *ngFor="let user of listUsers">
+    <mat-list-item role="listitem"
+      ><span class="username">
+        {{ user.name }}
+      </span>
+      | <a class="view" [routerLink]="['/users/view', user.id]">Görüntüle</a> |
+      | <a class="edit" [routerLink]="['/users/edit', user.id]">Güncelle</a> |
+      <a class="delete" [routerLink]="['/users/delete', user.id]"
+        >Sil</a
+      ></mat-list-item
+    >
+  </mat-list>
+</div>

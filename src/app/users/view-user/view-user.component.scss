@@ -1,0 +1,13 @@
+.mat-card {
+  max-width: 300px;
+  margin: 10px;
+
+  opacity: 0.9;
+
+  &:hover {
+    opacity: 1;
+    background: rgb(252, 246, 246);
+    border-top: 1px solid lightgreen;
+    transition: opacity 0.4s;
+  }
+}

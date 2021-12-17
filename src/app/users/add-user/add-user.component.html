@@ -1,0 +1,87 @@
+<mat-card>
+  <mat-card-title>Yeni Kullanıcı Ekle</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="addUserForm" (submit)="createForm()">
+      <p>
+        <mat-form-field class="field" appearance="outline">
+          <mat-label>İsim</mat-label>
+          <input matInput placeholder="isim" formControlName="username" />
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-error
+            *ngIf="
+              addUserForm.controls['username'].errors &&
+              addUserForm.controls['username'].hasError('required')
+            "
+          >
+            Lütfen İsim Girin
+          </mat-error>
+          <mat-error
+            *ngIf="
+              addUserForm.controls['username'].errors &&
+              addUserForm.controls['username'].hasError('minlength')
+            "
+          >
+            İsim En Az 3 Harften Oluşmalı
+          </mat-error>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field class="field" appearance="outline">
+          <mat-label>Email Adresi</mat-label>
+          <input matInput placeholder="email" formControlName="email" />
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-error
+            *ngIf="
+              addUserForm.controls['email'].errors &&
+              addUserForm.controls['email'].hasError('required')
+            "
+          >
+            Lütfen Email Adresi Girin
+          </mat-error>
+          <mat-error
+            *ngIf="
+              addUserForm.controls['email'].errors &&
+              addUserForm.controls['email'].hasError('email')
+            "
+          >
+            Geçerli Bir Email Adresi Girin
+          </mat-error>
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field class="field" appearance="outline">
+          <mat-label>Telefon Numarası</mat-label>
+          <input matInput placeholder="telefon" formControlName="phone" />
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-error
+            *ngIf="
+              addUserForm.controls['phone'].errors &&
+              addUserForm.controls['phone'].hasError('required')
+            "
+          >
+            Lütfen Telefon Numarası Girin
+          </mat-error>
+          <mat-error
+            *ngIf="
+              addUserForm.controls['phone'].errors &&
+              addUserForm.controls['phone'].hasError('maxlength')
+            "
+          >
+            Telefon Numarası 10 Haneden Oluşmalı
+          </mat-error>
+        </mat-form-field>
+      </p>
+
+      <button
+        class="button"
+        mat-raised-button
+        color="primary"
+        [disabled]="!addUserForm.valid"
+      >
+        Kullanıcı Ekle
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>
